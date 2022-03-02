@@ -1,4 +1,4 @@
-name: ci
+name: DO
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 10
 
-      - name: Sleep for 2000 seconds
+      - name: Sleep for 500 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '2000s'
+          time: '500s'
 
       - name: Clear droplets
         run: |

@@ -1,0 +1,85 @@
+name: "clear-do-droplets"
+
+on:
+  workflow_dispatch
+
+jobs:
+  clear-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_1 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
+
+  clear-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_2 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
+
+  clear-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_3 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
+
+  clear-4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_4 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
+
+  clear-5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_5 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
