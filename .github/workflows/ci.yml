@@ -6,11 +6,34 @@ on:
       - 'main'
 
 jobs:
-  build:
+  build-1:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        docean: [ ${{ secrets.DO_TOKEN_1 }}, ${{ secrets.DO_TOKEN_2 }} ]
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN_1 }}
+
+      - name: Init droplets
+        run: |
+          cd ${PWD}/automation/digitaocean
+          ./init.sh 2
+
+      - name: Sleep for 300 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '300s'
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean
+          ./clear.sh
+
+  build-2:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout to project
@@ -19,7 +42,7 @@ jobs:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ matrix.docean }}
+          token: ${{ secrets.DO_TOKEN_1 }}
 
       - name: Init droplets
         run: |
