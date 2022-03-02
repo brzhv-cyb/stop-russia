@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ ${{ secrets.DO_TOKEN_1 }}, ${{ secrets.DO_TOKEN_2 }} ]
+        docean: [ ${{ secrets.DO_TOKEN_1 }}, ${{ secrets.DO_TOKEN_2 }} ]
 
     steps:
       - name: Checkout to project
@@ -19,7 +19,7 @@ jobs:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ matrix.node }}
+          token: ${{ matrix.docean }}
 
       - name: Init droplets
         run: |
