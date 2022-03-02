@@ -19,7 +19,7 @@ jobs:
 
       - name: Init droplets
         run: |
-          cd automation/digitalocean
+          cd ${PWD}/automation/digitalocean
           ./init.sh 10
 
       - name: Sleep for 60 seconds
