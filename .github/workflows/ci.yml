@@ -42,7 +42,7 @@ jobs:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.DO_TOKEN_1 }}
+          token: ${{ secrets.DO_TOKEN_2 }}
 
       - name: Init droplets
         run: |
