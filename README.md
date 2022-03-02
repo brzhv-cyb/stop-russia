@@ -62,6 +62,7 @@ Then run one command in the terminal:
 docker run -ti --rm abagayev/stop-russia
 ```
 
+
 ### Launch in the cloud
 It is best to bombard from cloud services (such as DigitalOcean), this allows you to scale to a large number of servers and IP addresses in different countries.
 
