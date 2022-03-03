@@ -22,10 +22,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 10
 
-      - name: Sleep for 500 seconds
+      - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '500s'
+          time: '3600s'
 
       - name: Clear droplets
         run: |
@@ -49,10 +49,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 3
 
-      - name: Sleep for 500 seconds
+      - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '500s'
+          time: '3600s'
 
       - name: Clear droplets
         run: |
@@ -76,10 +76,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 10
 
-      - name: Sleep for 500 seconds
+      - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '500s'
+          time: '3600s'
 
       - name: Clear droplets
         run: |
@@ -103,10 +103,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 3
 
-      - name: Sleep for 500 seconds
+      - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '500s'
+          time: '3600s'
 
       - name: Clear droplets
         run: |
@@ -130,10 +130,10 @@ jobs:
           cd ${PWD}/automation/digitaocean
           ./init.sh 10
 
-      - name: Sleep for 500 seconds
+      - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '500s'
+          time: '3600s'
 
       - name: Clear droplets
         run: |
