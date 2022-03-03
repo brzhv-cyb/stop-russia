@@ -182,7 +182,7 @@ jobs:
       - name: Init droplets
         run: |
           cd ${PWD}/automation/digitaocean
-          ./init.sh 10
+          ./init.sh 7
 
       - name: Sleep for 900 seconds
         uses: jakejarvis/wait-action@master
