@@ -1,9 +1,14 @@
 name: DO
 
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: 'Destination'
+        required: true
+      duration:
+        description: 'Duration in seconds'
+        required: true
 
 jobs:
   build-1:
@@ -155,7 +160,7 @@ jobs:
       - name: Init droplets
         run: |
           cd ${PWD}/automation/digitaocean
-          ./init.sh 10
+          ./init.sh 3
 
       - name: Sleep for 900 seconds
         uses: jakejarvis/wait-action@master
@@ -182,7 +187,7 @@ jobs:
       - name: Init droplets
         run: |
           cd ${PWD}/automation/digitaocean
-          ./init.sh 7
+          ./init.sh 3
 
       - name: Sleep for 900 seconds
         uses: jakejarvis/wait-action@master

@@ -1,0 +1,22 @@
+name: "clear-linode-droplets"
+
+on:
+  workflow_dispatch
+
+jobs:
+  clear-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Setup Linode cli
+        uses: brendon1555/setup-linode-cli@master
+        with:
+          LINODE_CLI_TOKEN: ${{ secrets.L_TOKEN_1 }}
+        - run: linode-cli --help
+
+      - name: Clear droplets
+        run: |
+          cd automation/linode
+          ./clear.sh
