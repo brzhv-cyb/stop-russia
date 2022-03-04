@@ -1,14 +1,7 @@
 name: Linode
 
 on:
-  workflow_dispatch:
-    inputs:
-      destination:
-        description: 'Destination'
-        required: true
-      duration:
-        description: 'Duration in seconds'
-        required: true
+  workflow_dispatch
 
 jobs:
   build-1:
