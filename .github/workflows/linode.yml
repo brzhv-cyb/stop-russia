@@ -4,31 +4,31 @@ on:
   workflow_dispatch
 
 jobs:
-#  build-1:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout to project
-#        uses: actions/checkout@v2
-#
-#      - name: Setup Linode cli
-#        uses: brendon1555/setup-linode-cli@master
-#        with:
-#          LINODE_CLI_TOKEN: ${{ secrets.L_TOKEN_1 }}
-#
-#      - name: Init instances
-#        run: |
-#          cd ${PWD}/automation/linode
-#          ./init.sh 18 ${{ secrets.L_SECRET }}
-#
-#      - name: Sleep for 900 seconds
-#        uses: jakejarvis/wait-action@master
-#        with:
-#          time: '900s'
-#
-#      - name: Clear instances
-#        run: |
-#          cd automation/linode
-#          ./clear.sh
+  build-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Setup Linode cli
+        uses: brendon1555/setup-linode-cli@master
+        with:
+          LINODE_CLI_TOKEN: ${{ secrets.L_TOKEN_1 }}
+
+      - name: Init instances
+        run: |
+          cd ${PWD}/automation/linode
+          ./init.sh 18 ${{ secrets.L_SECRET }}
+
+      - name: Sleep for 900 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '900s'
+
+      - name: Clear instances
+        run: |
+          cd automation/linode
+          ./clear.sh
 
   build-2:
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
       - name: Init instances
         run: |
           cd ${PWD}/automation/linode
-          ./init.sh 20 ${{ secrets.L_SECRET }}
+          ./init.sh 10 ${{ secrets.L_SECRET }}
 
       - name: Sleep for 900 seconds
         uses: jakejarvis/wait-action@master
