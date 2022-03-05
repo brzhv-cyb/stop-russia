@@ -18,7 +18,7 @@ jobs:
       - name: Init instances
         run: |
           cd ${PWD}/automation/linode
-          ./init.sh 10 ${{ secrets.L_SECRET }}
+          ./init.sh 20 ${{ secrets.L_SECRET }}
 
       - name: Sleep for 900 seconds
         uses: jakejarvis/wait-action@master
