@@ -20,10 +20,10 @@ jobs:
           cd ${PWD}/automation/linode
           ./init.sh 18 ${{ secrets.L_SECRET }}
 
-      - name: Sleep for 3600 seconds
+      - name: Sleep for 1000 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '3600s'
+          time: '1000s'
 
       - name: Clear instances
         run: |
@@ -46,10 +46,10 @@ jobs:
           cd ${PWD}/automation/linode
           ./init.sh 10 ${{ secrets.L_SECRET }}
 
-      - name: Sleep for 3600 seconds
+      - name: Sleep for 1000 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '3600s'
+          time: '1000s'
 
       - name: Clear instances
         run: |
