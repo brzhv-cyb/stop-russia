@@ -9,8 +9,9 @@ git clone https://github.com/brzhv-cyb/stop-russia.git
 
 cd stop-russia && docker build -t bomb .
 
-NUMPROC=5
-
-for proc in $(seq 1 $NUMPROC); do
-  screen -d -m docker run -ti --rm bomb
-done
+screen -d -m docker run -ti --rm bomb
+#NUMPROC=5
+#
+#for proc in $(seq 1 $NUMPROC); do
+#  screen -d -m docker run -ti --rm bomb
+#done
