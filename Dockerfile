@@ -1,4 +1,4 @@
-FROM alpine/bombardier:latest
+FROM alexmon1989/dripper:latest
 
 COPY . /app
 WORKDIR /app
