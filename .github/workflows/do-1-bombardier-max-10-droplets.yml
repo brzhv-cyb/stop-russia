@@ -1,4 +1,4 @@
-name: DO-1-Dripper-Max-10
+name: DO-1-Bombardier-Max-10
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Init droplets
         run: |
-          cd ${PWD}/automation/digitaocean/dripper
+          cd ${PWD}/automation/digitaocean/bombardier
           ./init.sh ${{ github.event.inputs.droplets_count }} ${{ github.event.inputs.target }}
 
       - name: Sleep for 3600 seconds
@@ -34,5 +34,5 @@ jobs:
 
       - name: Clear droplets
         run: |
-          cd automation/digitaocean/dripper
+          cd automation/digitaocean/bombardier
           ./clear.sh
