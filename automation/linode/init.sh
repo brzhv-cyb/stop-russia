@@ -32,7 +32,7 @@ do
     --booted true \
     --root_pass "$2" \
     --stackscript_id $STACK_SCRIPT_ID \
-    --stackscript_data STACK_SCRIPT_DATA \
+    --stackscript_data $STACK_SCRIPT_DATA \
     --region $REGION \
     --type g6-nanode-1
 done
