@@ -1,4 +1,4 @@
-name: DO-3-Dripper-Max-10-Droplets
+name: DO-3-Dripper-Max-10
 
 on:
   workflow_dispatch:
