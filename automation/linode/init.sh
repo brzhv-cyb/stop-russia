@@ -16,7 +16,7 @@ linode-cli stackscripts create \
   --label stop-russia \
   --images "linode/ubuntu20.04" \
   --is_public false \
-  --script userdata.sh
+  --script userdata.sh $3
 
 STACK_SCRIPT_ID=$(linode-cli stackscripts list --is_public false |  grep stop-russia | awk '{print $2}' | head -n1)
 
