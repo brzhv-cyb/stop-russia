@@ -16,10 +16,13 @@ linode-cli stackscripts create \
   --label stop-russia \
   --images "linode/ubuntu20.04" \
   --is_public false \
-  --script userdata.sh $3
+  --script userdata.sh
 
 STACK_SCRIPT_ID=$(linode-cli stackscripts list --is_public false |  grep stop-russia | awk '{print $2}' | head -n1)
 
+STACK_SCRIPT_DATA="{ 'TARGET': '$3'}"
+
+echo STACK_SCRIPT_DATA
 for ((c=1; c<=NUMDROPLES; c++))
 do
   linode-cli linodes create \
@@ -29,6 +32,7 @@ do
     --booted true \
     --root_pass "$2" \
     --stackscript_id $STACK_SCRIPT_ID \
+    --stackscript_data STACK_SCRIPT_DATA \
     --region $REGION \
     --type g6-nanode-1
 done
