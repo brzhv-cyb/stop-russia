@@ -1,4 +1,4 @@
-name: Linode
+name: Linode-1
 
 on:
   workflow_dispatch:
