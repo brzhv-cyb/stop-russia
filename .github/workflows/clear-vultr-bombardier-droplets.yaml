@@ -17,5 +17,5 @@ jobs:
 
       - name: Clear droplets
         run: |
-          cd automation/digitaocean/vultr
+          cd automation/digitaocean/vultr/bombardier
           ./clear.sh

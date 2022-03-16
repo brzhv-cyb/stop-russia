@@ -27,7 +27,7 @@ jobs:
 
       - name: Init instances
         run: |
-          cd ${PWD}/automation/vultr
+          cd ${PWD}/automation/vultr/bombardier
           ./init.sh ${{ github.event.inputs.droplets_count }} ${{ github.event.inputs.protocol }} ${{ github.event.inputs.target }}
 
       - name: Sleep for 3600 seconds
@@ -37,5 +37,5 @@ jobs:
 
       - name: Clear instances
         run: |
-          cd automation/linode
+          cd automation/vultr/bombardier
           ./clear.sh
