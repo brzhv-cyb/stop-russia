@@ -21,7 +21,7 @@ do
      doctl compute droplet create \
        --image ubuntu-20-04-x64 \
        --size s-1vcpu-1gb \
-         --user-data "$(sed -e "s/\${target}/https:\/\/$2/" userdata.sh)" \
+         --user-data "$(sed -e "s/\${target}/$2:\/\/$3/" userdata.sh)" \
        --region $REGION \
        --ssh-keys "${KEYS}" \
        "stop-russia-bombardier-${HASH}"
