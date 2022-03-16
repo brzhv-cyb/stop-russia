@@ -1,0 +1,41 @@
+name: Vultr-1-Bombardier
+
+on:
+  workflow_dispatch:
+    inputs:
+      protocol:
+        description: 'Protocol'
+        required: true
+      target:
+        description: 'Target'
+        required: true
+      droplets_count:
+        description: 'Droplets Count'
+        required: true
+
+jobs:
+  build-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install vultr-cli
+        uses: techknowlogick/action-vultr@v2
+        with:
+          token: ${{ secrets.VULTR_TOKEN_1 }}
+
+      - name: Init instances
+        run: |
+          cd ${PWD}/automation/vultr
+          ./init.sh ${{ github.event.inputs.droplets_count }} ${{ github.event.inputs.protocol }} ${{ github.event.inputs.target }}
+
+      - name: Sleep for 3600 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '3600s'
+
+      - name: Clear instances
+        run: |
+          cd automation/linode
+          ./clear.sh

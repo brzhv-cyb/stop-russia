@@ -1,0 +1,21 @@
+name: Clear-Vultr-Bombardier-Droplets
+
+on:
+  workflow_dispatch
+
+jobs:
+  clear-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to project
+        uses: actions/checkout@v2
+
+      - name: Install vultr-cli
+        uses: techknowlogick/action-vultr@v2
+        with:
+          token: ${{ secrets.VULTR_TOKEN_1 }}
+
+      - name: Clear droplets
+        run: |
+          cd automation/digitaocean/vultr
+          ./clear.sh

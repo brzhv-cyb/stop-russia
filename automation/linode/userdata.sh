@@ -12,5 +12,5 @@ cd stop-russia/automation/linode && docker build -t bomb .
 NUMPROC=5
 
 for proc in $(seq 1 $NUMPROC); do
-  screen -d -m docker run -ti --rm bomb
+  screen -d -m docker run -ti --cpus=".8" --rm bomb
 done
