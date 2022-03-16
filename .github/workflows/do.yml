@@ -31,33 +31,6 @@ jobs:
           cd automation/digitaocean
           ./clear.sh
 
-  build-5:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout to project
-        uses: actions/checkout@v2
-
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DO_TOKEN_5 }}
-
-      - name: Init droplets
-        run: |
-          cd ${PWD}/automation/digitaocean
-          ./init.sh 10
-
-      - name: Sleep for 3600 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '3600s'
-
-      - name: Clear droplets
-        run: |
-          cd automation/digitaocean
-          ./clear.sh
-
   build-7:
     runs-on: ubuntu-latest
 
