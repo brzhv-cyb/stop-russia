@@ -1,4 +1,4 @@
-name: Vultr-1-Bombardier
+name: Vultr-1-Bombardier-Max-10
 
 on:
   workflow_dispatch:
