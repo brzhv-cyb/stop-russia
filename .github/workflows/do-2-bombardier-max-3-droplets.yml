@@ -3,6 +3,9 @@ name: DO-2-Bombardier-Max-3
 on:
   workflow_dispatch:
     inputs:
+      protocol:
+        description: 'Protocol'
+        required: true
       target:
         description: 'Target'
         required: true
@@ -25,7 +28,7 @@ jobs:
       - name: Init droplets
         run: |
           cd ${PWD}/automation/digitaocean/bombardier
-          ./init.sh ${{ github.event.inputs.droplets_count }} ${{ github.event.inputs.target }}
+          ./init.sh ${{ github.event.inputs.droplets_count }} ${{ github.event.inputs.protocol }} ${{ github.event.inputs.target }}
 
       - name: Sleep for 3600 seconds
         uses: jakejarvis/wait-action@master
